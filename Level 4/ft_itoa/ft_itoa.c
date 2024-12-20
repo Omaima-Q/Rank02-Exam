@@ -9,10 +9,10 @@ char *ft_itoa(int nbr)
 // for later use
 	int len = 0;
 	if (nbr <= 0)
-		len++;
+		len++; // the increment here is for the negative sign or for the zero itself
 	while(n)
 	{
-		n /= 10;
+		n /= 10; // This loop counts how many digits are in nbr by repeatedly dividing n by 10 until n becomes 0
 		len++;
 	}
 	char *result = malloc(sizeof(char) * (len + 1));
@@ -31,10 +31,11 @@ char *ft_itoa(int nbr)
 	}
 	while (nbr > 0)
 	{
-		result[--len] = nbr / 10 + '0';
+		result[--len] = nbr % 10 + '0';
 		nbr /= 10;
 	}
 	return (result)
+
 }
 
 	
