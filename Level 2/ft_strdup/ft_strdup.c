@@ -20,3 +20,27 @@ char	*ft_strdup(char *src)
 	}
 	return (strcpy);
 }
+
+int main() 
+{
+    char original[] = "Hello, World!";
+    char *duplicate;
+
+    // Call ft_strdup to duplicate the string
+    duplicate = ft_strdup(original);
+
+    // Check if duplication was successful
+    if (duplicate != NULL) {
+        // Print the original and duplicated strings
+        printf("Original: %s\n", original);
+        printf("Duplicate: %s\n", duplicate);
+        
+        // Free the allocated memory for the duplicate
+        free(duplicate);
+    } else {
+        // Handle memory allocation failure
+        printf("Memory allocation failed!\n");
+    }
+
+    return 0;
+}
