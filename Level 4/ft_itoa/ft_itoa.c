@@ -31,11 +31,38 @@ char *ft_itoa(int nbr)
 	}
 	while (nbr > 0)
 	{
+		// Inside the loop, nbr % 10 is used to get the last digit of the number.
+		//The modulus operator % returns the remainder of the division of nbr by 10, 
+		//which effectively gives the last digit. For example, if nbr is 123, nbr % 10 will yield 3.
 		result[--len] = nbr % 10 + '0';
+		// The --len operation decrements the length counter 
+		//before using it, which means that the last digit will be placed at the end of the 
+		//string (just before the null terminator).
+		//This is essential because the digits are filled in reverse order.
 		nbr /= 10;
 	}
 	return (result)
 
+}
+
+
+int main() 
+{
+    // Test the ft_itoa function with a single integer
+    int number = '-1234';
+    char *result = ft_itoa(number);
+    
+    if (result != NULL) 
+    {
+        printf("ft_itoa(%d) = %s\n", number, result);
+        free(result); // Free the allocated memory
+    } 
+    else 
+    {
+        printf("Memory allocation failed.\n");
+    }
+
+    return 0;
 }
 
 	
