@@ -1,51 +1,33 @@
-#include <stdio.h>
+#define abs(x) x < 0 ? -x : x
 
-char to_lower(char c)
+int is_correct(char c) // check if the char is vallid
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + ('a' - 'A'));
-	return (c);
+	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f'));
 }
 
-int get_digit(char c, int digits_in_base)
+int		ft_atoi_base(const char *str, int str_base)
 {
-	int max_digit;
-
-	if (digits_in_base <= 10)
-		max_digit = digits_in_base - 1 + '0';
-	else
-		max_digit = digits_in_base - 10 - 1 + 'a';
-
-	if (c >= '0' && c <= '9' && c <= max_digit)
-		return (c - '0');
-	else if (c >= 'a' && c <= 'f' && c <= max_digit)
-		return (10 + c - 'a');
-	else
-		return (-1);
-}
-
-int ft_atoi_base(const char *str, int str_base)
-{
-	int result = 0;
+	int i = 0;
 	int sign = 1;
-	int digit;
-
-	if (str == NULL || str_base < 2 || str_base > 16)
-		return 0;
-
-	if (*str == '-')
+	unsigned int nb = 0;
+	
+	while (str[i] == ' ') // check if there is a space 
+		i++;
+	if (str[i] == '-' || str[i] == '+') // if it's negative or positive 
 	{
-		sign = -1;
-		++str;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-
-	while (*str)
+	while (is_correct(str[i]) && (str_base <= 16) && str[i] != 0) // valid base and correct char 
 	{
-		digit = get_digit(to_lower(*str), str_base);
-		if (digit == -1)
-			break;
-		result = result * str_base + digit;
-		++str;
+		if(str[i] >= '0' && str[i] <= '9')
+			nb = nb *str_base + str[i] - '0';
+		if ((str[i] >= 'A' && str[i] <= 'F') && (abs(str_base) >= 11)) // when its a bigger case
+			nb = nb *str_base + str[i] - 'A' + 10;
+		if ((str[i] >= 'a' && str[i] <= 'z') && (abs(str_base) >= 11)) // when its a smaller case
+			nb = nb *str_base + str[i] - 'a' + 10;
+		i++;
 	}
-	return (result * sign);
+	return (nb * sign);
 }
