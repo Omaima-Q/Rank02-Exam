@@ -4,40 +4,39 @@
 int	*ft_rrange(int start, int end)
 {
 	int i = 0;
-	int len = (abs(end - start)) + 1;
+	int len = (abs(start - end)) + 1;
 	int *res = malloc(sizeof(int) * len);
 
 	while (i < len)
 	{
 		if (start > end)
 		{
-			res[i] = start;
-			start--;
+			res[i] = end;
+			end++;
 			i++;
 		}
 		else
 		{
-			res[i] = start;
-			start++;
+			res[i] = end;
+			end--;
 			i++;
 		}
 	}
 	return (res);
 }
 
-int main()
+int main() 
 {
-    int start = -1;
-    int end = 2;
-    int len = (abs(end - start)) + 1;
-
-    int *result = malloc(sizeof(int) * len);
-
-    result = ft_rrange(-1, 2);
-    printf("%d\n", result[0]);
-    printf("%d\n", result[1]);
-    printf("%d\n", result[2]);
-    printf("%d\n", result[3]);
-    printf("%d\n", result[4]);
-    free (result);
+    int start = 0;
+    int end = 0;
+    int *result = ft_rrange(start, end);
+    
+    if (result) {
+        for (int i = 0; i <= (end - start); i++) {
+            printf("%d ", result[i]);
+        }
+        free(result); // Don't forget to free the allocated memory
+    }
+    
+    return 0;
 }
