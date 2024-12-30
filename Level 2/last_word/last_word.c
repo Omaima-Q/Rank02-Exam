@@ -1,27 +1,23 @@
 #include <unistd.h>
 
-void	last_word(char *str)
+int main(int ac, char **av)
 {
-	int j = 0;
 	int i = 0;
 
-	while (str[i])
+	if (ac == 2)
 	{
-		if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)
-			j = i + 1;
-		i++;
+		while(av[1][i])
+			i++; // iteration util the end of the string
+		i--; //iterate backwards after the null terminator (last character of the last word) 
+		while(av[1][i] > 32)
+			i--; // iterate backwards until we find a space 
+		i++; // iterate forward the last string (which is the last word)
+		while(av[1][i])
+		{
+			write(1, &av[1][i], 1); // print the last word
+			i++;
+		}
 	}
-	while (str[j] >= 33 && str[j] <= 127)
-	{
-		write(1, &str[j], 1);
-		j++;
-	}
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc == 2)
-		last_word(argv[1]);
 	write(1, "\n", 1);
 	return (0);
 }
