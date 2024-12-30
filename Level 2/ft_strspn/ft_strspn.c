@@ -19,3 +19,39 @@ size_t	ft_strspn(const char *s, const char *accept)
     }
     return (count);
 }
+
+// or you can use another way, check the function below 
+
+#include <stdio.h>
+
+size_t	ft_strspn(const char *s, const char *accept)
+{
+    int i = 0;
+    int j = 0;
+    int flag;
+
+    while(s[i++])
+    {
+        j = 0;
+        flag = 0;
+        while(accept[j])
+        {
+            if (s[i] == accept[j])
+                flag = 1;
+            j++;
+        }
+        if (flag == 0)
+            return (i);
+    }
+    return (i);
+}
+
+// int main()
+// {
+//     char s1[] = "omaima";
+//     char accept[] = "omai";
+
+//     printf("%zu", ft_strspn(s1, accept));
+// }
+// the result is 6
+
