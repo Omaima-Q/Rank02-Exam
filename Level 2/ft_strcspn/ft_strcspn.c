@@ -1,21 +1,33 @@
-#include <stddef.h>
+// Needed for size_t
+#include <stdio.h>
 
-size_t	ft_strcspn(const char *s, const char *reject)
+size_t ft_strcspn(const char *s, const char *reject)
 {
-    size_t count;
     size_t i;
-
-    count = 0;
+    size_t j;
+    
     i = 0;
-    while (*s)
+    // Looping over the whole string
+    while(s[i++])
     {
-        while (reject[i] && *s != reject[i])
-            i++;
-        if (reject[i] != '\0')
-            return (count);
-        i = 0;
-        count++;
-        s++;
+        j = 0;
+        // Check the current string char against every char in charset
+        while (reject[j])
+        {
+            // If character found, return index in current string
+            if (s[i] == reject[j++])
+            	return (i);
+        }
     }
-    return (count);
+    // If we spanned the whole string, return i, in that case the
+    // rejected char found is the NULL-terminating one
+    return (i);
 }
+
+// int main()
+// {
+//     char s1[] = "omaima";
+//     char reject[] = "a";
+
+//     printf("%zu", ft_strcspn(s1, reject));
+// }
