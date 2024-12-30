@@ -1,46 +1,32 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 char	*ft_strdup(char *src)
 {
-	int	i = 0;
-	int	length = 0;
-	char	*strcpy;
+	int		i;
+	char	*dest;
 
-	while (src[length])
-		length++;
-	strcpy = malloc(sizeof(*strcpy) * (length + 1));
-	if (strcpy != NULL)
+	i = 0;
+	while (src[i]) // calculate the length first (same as strlen)
+		i++;
+	dest = malloc(sizeof(char) * (i + 1)); // malloc the dest 
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i])
 	{
-		while (src[i])
-		{
-			strcpy[i] = src[i];
-			i++;
-		}
-		strcpy[i] = '\0';
+		dest[i] = src[i]; // this line is same as strcpy function
+		i++;
 	}
-	return (strcpy);
+	dest[i] = '\0';
+	return (dest);
 }
 
-int main() 
-{
-    char original[] = "Hello, World!";
-    char *duplicate;
+// this function is totally same as strcpy function, the only difference is that you must malloc the 
+// destination (which is dest) and copy the string inside it
 
-    // Call ft_strdup to duplicate the string
-    duplicate = ft_strdup(original);
-
-    // Check if duplication was successful
-    if (duplicate != NULL) {
-        // Print the original and duplicated strings
-        printf("Original: %s\n", original);
-        printf("Duplicate: %s\n", duplicate);
-        
-        // Free the allocated memory for the duplicate
-        free(duplicate);
-    } else {
-        // Handle memory allocation failure
-        printf("Memory allocation failed!\n");
-    }
-
-    return 0;
-}
+// int	main(void)
+// {
+// 	printf("%s\n", ft_strdup("test"));
+// }
