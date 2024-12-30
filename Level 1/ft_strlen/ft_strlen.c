@@ -6,3 +6,10 @@ int ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
+// int	main(void)
+// {
+// 	char *str = "omaima";
+// 	printf("%d", ft_strlen(str));
+// 	return (0);
+// }
