@@ -12,7 +12,7 @@ int	main(int argc, char *argv[])
 		number = atoi(argv[1]);
 		if (number == 1)
 			printf("1");
-		while (number >= ++i)
+		while (number >= ++i) // they increment first to start from number 2 
 		{
 			if (number % i == 0)
 			{
@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 				if (number == i)
 					break ;
 				printf("*");
-				number /= i;
+				number /= i; // we divide the current number to get the next number
 				i = 1;
 			}
 		}
