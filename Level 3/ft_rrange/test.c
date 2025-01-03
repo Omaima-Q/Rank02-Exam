@@ -25,18 +25,18 @@ int	*ft_rrange(int start, int end)
 	return (res);
 }
 
-int main() 
-{
-    int start = 0;
-    int end = 0;
-    int *result = ft_rrange(start, end);
+// int main() 
+// {
+//     int start = 0;
+//     int end = 0;
+//     int *result = ft_rrange(start, end);
     
-    if (result) {
-        for (int i = 0; i <= (end - start); i++) {
-            printf("%d ", result[i]);
-        }
-        free(result); // Don't forget to free the allocated memory
-    }
+//     if (result) {
+//         for (int i = 0; i <= (end - start); i++) {
+//             printf("%d ", result[i]);
+//         }
+//         free(result); // Don't forget to free the allocated memory
+//     }
     
-    return 0;
-}
+//     return 0;
+// }
