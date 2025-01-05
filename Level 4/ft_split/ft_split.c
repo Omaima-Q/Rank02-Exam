@@ -28,21 +28,18 @@ char    **ft_split(char *str)
   return (split);
 }
 
-// int main() 
-// {
-//     char *input = "Hello,   world! This is a test.";
-//     char **result = ft_split(input);
-    
-//     int i = 0; // Initialize index
-//     while (result[i] != NULL) 
-//     { // Loop until we reach the end of the array
-//         printf("Word %d: %s ", i, result[i]);
-//         free(result[i]); // Free each allocated word
-//         i++; // Increment index
+// int main() {
+//     char str[] = "Hello, this is a test string to be split.";
+//     char **words = ft_split(str);
+
+//     printf("The words in the string are:\n");
+//     for (int i = 0; words[i] != NULL; i++) {
+//         printf("%s\n", words[i]);
+//         free(words[i]); // Free each word's allocated memory
 //     }
-    
-//     free(result); // Free the array of pointers
-//     return 0; // Return success
+//     free(words); // Free the split array
+
+//     return 0;
 // }
 
       
