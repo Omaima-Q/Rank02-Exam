@@ -15,6 +15,7 @@ char    **ft_split(char *str)
   {
       split[j] = malloc(1024); // allocates memory for the new string 
       word = split[j]; // save the new string in word
+      k = 0; // Reset k for each new word
       while(str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')) // when i reach 
         // the first word copy it in word until i reach whitespace
           word[k++] = str[i++]; 
@@ -24,7 +25,7 @@ char    **ft_split(char *str)
       j++; // The index j is incremented to move to the next position in the split array
   }
   split[j] = NULL; // The last element of the split array is set to NULL to indicate the end of the array of words.
-return (0);
+  return (split);
 }
 
 // int main() 
