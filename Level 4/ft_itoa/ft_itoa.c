@@ -17,7 +17,7 @@ char *ft_itoa(int nbr)
 	}
 	char *result = malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
-		resturn (NULL);
+		return (NULL);
 	result[len] = '\0';
 	while (nbr == 0)
 	{
