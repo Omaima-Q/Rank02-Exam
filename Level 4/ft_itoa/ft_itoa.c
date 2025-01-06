@@ -49,7 +49,7 @@ char *ft_itoa(int nbr)
 int main() 
 {
     // Test the ft_itoa function with a single integer
-    int number = '-1234';
+    int number = -1234;
     char *result = ft_itoa(number);
     
     if (result != NULL) 
