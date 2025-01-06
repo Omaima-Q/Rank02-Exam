@@ -58,10 +58,8 @@ char *ft_itoa(int nbr)
 //         free(result); // Free the allocated memory
 //     } 
 //     else 
-//     {
 //         printf("Memory allocation failed.\n");
-//     }
-
+//
 //     return 0;
 // }
 
