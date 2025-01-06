@@ -46,23 +46,23 @@ char *ft_itoa(int nbr)
 }
 
 
-int main() 
-{
-    // Test the ft_itoa function with a single integer
-    int number = -1234;
-    char *result = ft_itoa(number);
+// int main() 
+// {
+//     // Test the ft_itoa function with a single integer
+//     int number = -1234;
+//     char *result = ft_itoa(number);
     
-    if (result != NULL) 
-    {
-        printf("ft_itoa(%d) = %s\n", number, result);
-        free(result); // Free the allocated memory
-    } 
-    else 
-    {
-        printf("Memory allocation failed.\n");
-    }
+//     if (result != NULL) 
+//     {
+//         printf("ft_itoa(%d) = %s\n", number, result);
+//         free(result); // Free the allocated memory
+//     } 
+//     else 
+//     {
+//         printf("Memory allocation failed.\n");
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 	
