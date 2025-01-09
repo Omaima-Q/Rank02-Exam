@@ -19,3 +19,20 @@ char *ft_strrev(char *str)
     }
     return (str); // Return the reversed string
 }
+
+
+// #include <stdio.h>
+// 
+// int main()
+// {
+//     char str[] = "Hello, World!";
+    
+//     printf("Original String: %s\n", str);
+//     ft_strrev(str);
+//     printf("Reversed String: %s\n", str);
+
+//     return 0;
+// }
+
+
+
