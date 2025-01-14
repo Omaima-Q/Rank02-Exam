@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *ft_range(int start, int end)
+int *ft_rrange(int start, int end)
 {
     int i = 0;
     int *result;
@@ -33,7 +33,7 @@ int *ft_range(int start, int end)
 // int main(void)
 // {
 //     int size = 4;
-//     int *result = ft_range(0, -3);
+//     int *result = ft_rrange(0, -3);
 //     int i = 0;
 //     while (size > i)
 //     {
