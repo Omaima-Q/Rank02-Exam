@@ -10,7 +10,7 @@ int	main(int ac, char **av)
 	{
 		while (av[1][i] != '\0')// iterate until the end of the string
 			i++;
-		while (i >= 0) // keep iterating until the begonning of the string 
+		while (i >= 0) // keep looping until the begonning of the string 
 		{
 			while (av[1][i] == '\0' || av[1][i] == ' ' || av[1][i] == '\t')
 				i--; // iterate backwards until it finds null or space or tab
