@@ -15,7 +15,7 @@ size_t  ft_strcspn(const char *s, const char *reject)
 
   while (*s)
   {
-    if (!is_char_in_string(*s, reject))
+    if (!is_char_in_string(*s, reject)) // the difference between reject and accept is just ! not
       count++;
     else
       break ;
@@ -24,17 +24,3 @@ size_t  ft_strcspn(const char *s, const char *reject)
   return (count);
 }
 
-// size_t  ft_strspn(const char *s, const char *accept)
-// {
-//   size_t  count = 0;
-
-//   while (*s)
-//   {
-//     if (is_char_in_string(*s, accept))
-//       count++;
-//     else
-//       break ;
-//     s++;
-//   }
-//   return (count);
-// }
