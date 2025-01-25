@@ -16,8 +16,8 @@ int main(int ac, char **av)
             j++;
         }
         if (av[1][i] == '\0')
-            write(1, av[1], i);
-
+            write(1, av[1], i); // we will write the whole string and we have already i which
+        // is the length 
     }
     write(1, "\n", 1);
     return(0);
