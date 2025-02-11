@@ -12,11 +12,15 @@ void	ft_putnbr(int n) // use the putnbr function to print the numbers
 
 //or we can use this putnbr function
 
+//passed in the exam
+
 void	ft_putnbr(int n)
 {
+	char str[10] = "0123456789";
+	
 	if (n > 9)
 		ft_putnbr(n / 10);
-	write(1, &"0123456789"[n % 10], 1);
+	write(1, &str[n % 10], 1);
 }
 
 int	main(int argc, char **argv)
