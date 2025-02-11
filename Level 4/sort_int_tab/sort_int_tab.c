@@ -21,3 +21,17 @@ void	sort_int_tab(int *tab, unsigned int size)
 			i++;
 	}
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     int tab[] = {1, 8, 77, 68, 42, 16, 2, 6};
+//     sort_int_tab(tab, 8);
+//     int i = 0;
+//     while (i < 8)
+//     {
+//         printf("%d\n", tab[i]);
+//         i++;
+//     }
+// }
