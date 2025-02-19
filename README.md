@@ -16,3 +16,4 @@ Last advice : don't underestimate any question whatever is the question focus an
 I updated the question that passed in the exam. The questions with " passed in the exam " are correct and you can practice it and see the way of solving it.
 
 Good Luck 🎉
+<img width="1051" alt="rank 2" src="https://github.com/user-attachments/assets/db433775-9d76-4047-927b-1fd7203d2057" />
